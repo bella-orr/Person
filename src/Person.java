@@ -98,7 +98,7 @@ public class Person
 
     public String toCSVDataRecord()
         {
-            return this.ID + ", " + this.firstName + ", " + ", " + this.lastName + ", " + this.title + ", " + this.YOB;
+            return this.ID + ", " + this.firstName + ", " + this.lastName + ", " + this.title + ", " + this.YOB;
         }
 
 

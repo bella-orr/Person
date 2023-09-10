@@ -48,8 +48,9 @@ public class PersonGenerator
             //records in array list
             people.add(folk);
 
+
             //Asks user for more information using getYN method
-            done = SafeInput.getYNConfirm(in, "Do you want to enter more information?");
+            done = SafeInput.getYNConfirm(in, "Are you done entering information?");
 
 
         }

@@ -1,235 +1,243 @@
+
 import java.util.Scanner;
 
-//Part A, getNonZeroLenString
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Tom Wulf Tom.Wulf@uc.edu
+ */
 public class SafeInput
 {
     /**
-     *
+     * Get a String which contains at least one character
      * @param pipe a Scanner opened to read from System.in
-     * @param prompt prompt for user
+     * @param prompt prompt for the user
      * @return a String response that is not zero length
      */
     public static String getNonZeroLenString(Scanner pipe, String prompt)
     {
-        String retString = ""; // Set this to zero length. Loop runs until it isn’t
-        do
-        {
-            System.out.print("\n" + prompt + ": "); // show prompt add space
-            retString = pipe.nextLine();
-        }
-        while(retString.length() == 0);
-        return retString;
-    }
-
-//Part B, getInt
-
-    public static int getInt(Scanner pipe, String prompt)
-    {
-        //Declarations
-        Scanner in = new Scanner(System.in);
-        int retInt = 0;
-        String trash;
-        boolean finished = false;
-
+        String retString = "";
         do
         {
             System.out.print("\n" + prompt + ": ");
+            retString = pipe.nextLine();
+        }while(retString.length() == 0); // until we have some characters
 
-            if (in.hasNextInt()) //if input is an int
-            {
-                retInt = in.nextInt();
-                finished = true;
-            }
+        return retString;
 
-            else //if input is not an int
-            {
-                System.out.println("You entered and invalid input, please try again");
-                trash = in.nextLine();
-            }
-
-        }
-        while(!finished);
-        return retInt;
     }
-
-//Part C, getDouble
-
-    public static double getDouble(Scanner pipe, String prompt)
-    {
-        //Declarations
-        Scanner in = new Scanner(System.in);
-        double retDouble = 0;
-        String trash;
-        boolean finished = false;
-
-        do
-        {
-            System.out.print("\n" + prompt + ": "); //prompts user
-
-            if (in.hasNextDouble()) //if input is a double
-            {
-                retDouble = in.nextDouble();
-                finished = true;
-            }
-
-            else //if input is not a double
-            {
-                System.out.println("You entered and invalid input, please try again");
-                trash = in.nextLine();
-            }
-
-        }
-        while(!finished);
-        return retDouble;
-    }
-
-    //Part D, getRangeInt
-
+    /**
+     * Get an int value within a specified numeric range
+     * @param pipe - Scanner instance to read the data System.in in most cases
+     * @param prompt - input prompt msg should not include range info
+     * @param low - low end of inclusive range
+     * @param high - high end of inclusive range
+     * @return - int value within the inclusive range
+     */
     public static int getRangedInt(Scanner pipe, String prompt, int low, int high)
     {
-        //Declarations
-        Scanner in = new Scanner(System.in);
-        int rangedInt = 0;
-        String trash;
-        boolean finished = false;
+        int retVal = 0;
+        String trash = "";
+        boolean done = false;
 
         do
         {
-            System.out.print("\n" + prompt + ": ");
-
-            if (in.hasNextInt()) //if input is an int
+            System.out.print("\n" + prompt + "[" + low + "-" + high + "]: ");
+            if(pipe.hasNextInt())
             {
-                rangedInt = in.nextInt();
-                if (rangedInt < low || rangedInt > high)// tests to see if input is in range
+                retVal = pipe.nextInt();
+                pipe.nextLine();
+                if(retVal >= low && retVal <= high)
                 {
-                    System.out.println("You entered and invalid input, please try again");
+                    done = true;
                 }
                 else
                 {
-                    finished = true;
+                    System.out.println("\nNumber is out of range [" + low + "-" + high + "]: " + retVal);
                 }
-
-            }
-
-            else //if input is not an int
-            {
-                System.out.println("You entered and invalid input, please try again");
-                trash = in.nextLine();
-            }
-
-        }
-        while(!finished);
-        return rangedInt;
-    }
-
-    //Part E, getRangedDouble
-    public static double getRangedDouble(Scanner pipe, String prompt, double low, double high)
-    {
-        //Declarations
-        Scanner in = new Scanner(System.in);
-        double ranDouble = 0;
-        String trash;
-        boolean finished = false;
-
-        do
-        {
-            System.out.print("\n" + prompt + ": ");
-
-            if (in.hasNextDouble()) //if input is a double
-            {
-                ranDouble = in.nextDouble();
-                if (ranDouble < low || ranDouble > high)// tests to see if input is in range
-                {
-                    System.out.println("\nYou entered and invalid input, please try again");
-                }
-                else
-                {
-                    finished = true;
-                }
-
-            }
-
-            else //if input is not a double
-            {
-                System.out.println("\nYou entered and invalid input, please try again");
-                trash = in.nextLine();
-            }
-
-        }
-        while(!finished);
-        return ranDouble;
-    }
-
-    //Part F, getYNConfirm
-    public static boolean getYNConfirm(Scanner pipe, String prompt)
-    {
-        //Declarations
-        String option = "";
-        boolean metBoolean = false;
-        boolean classBoolean = true;
-
-        do
-        {
-            System.out.print("\n" + prompt + ": "); // prompt for user
-            option = pipe.nextLine();
-
-            if (option.equalsIgnoreCase("y")||option.equalsIgnoreCase("yes") || option.equalsIgnoreCase("n") || option.equalsIgnoreCase("no"))
-            {
-                if  (option.equalsIgnoreCase("y")||option.equalsIgnoreCase("yes")) //if user has more items
-                {
-                    classBoolean = !classBoolean;
-                    metBoolean = !metBoolean;
-                }
-
-                else // if user has no more items
-                {
-                    classBoolean = true;
-                    metBoolean = !metBoolean;
-                }
-
-            }
-
-            else // user enters invalid input
-            {
-                System.out.print("\nYou entered an invalid input, please try again\n");
-                metBoolean = false;
-            }
-        }while(!metBoolean);
-        return classBoolean;
-
-    }
-
-// Part G, getRegExString
-
-    public static String getRegExString(Scanner pipe, String prompt, String regExPattern)
-    {
-        //Declarations
-        String value = "";
-        boolean gotAValue = false;
-
-        do
-        {
-            // show the prompt
-            System.out.print(prompt + ": ");
-
-            // input the data
-            value = pipe.nextLine();
-
-            // test to see if it is correct
-            if(value.matches(regExPattern))
-            {
-                // We have a match this String passes!
-                gotAValue = true;
             }
             else
             {
-                System.out.println("\nInvalid input: " + value);
+                trash = pipe.nextLine();
+                System.out.println("You must enter an int: " + trash);
             }
+        }while(!done);
 
-
-        }while(!gotAValue);
-        return value;
-
+        return retVal;
     }
 
+    /**
+     * Get an int value with no constraints
+     * @param pipe - Scanner instance to read the data System.in in most cases
+     * @param prompt - input prompt msg should not include range info
+     * @return - unconstrained int value 
+     */
+    public static int getInt(Scanner pipe, String prompt)
+    {
+        int retVal = 0;
+        String trash = "";
+        boolean done = false;
+
+        do
+        {
+            System.out.print("\n" + prompt + ": ");
+            if(pipe.hasNextInt())
+            {
+                retVal = pipe.nextInt();
+                pipe.nextLine();
+                done = true;
+            }
+            else
+            {
+                trash = pipe.nextLine();
+                System.out.println("You must enter an int: " + trash);
+            }
+        }while(!done);
+
+        return retVal;
+    }
+
+
+    /**
+     * get a double value within an inclusive range
+     * @param pipe - Scanner instance to read the data System.in in most cases
+     * @param prompt - input prompt msg should not contain range info
+     * @param low - low value inclusive
+     * @param high - high value inclusive
+     * @return  - double value within the specified inclusive range
+     */
+    public static double getRangedDouble(Scanner pipe, String prompt, int low, int high)
+    {
+        double retVal = 0;
+        String trash = "";
+        boolean done = false;
+
+        do
+        {
+            System.out.print("\n" + prompt + "[" + low + "-" + high + "]: ");
+            if(pipe.hasNextDouble())
+            {
+                retVal = pipe.nextDouble();
+                pipe.nextLine();
+                if(retVal >= low && retVal <= high)
+                {
+                    done = true;
+                }
+                else
+                {
+                    System.out.println("\nNumber is out of range [" + low + "-" + high + "]: " + retVal);
+                }
+            }
+            else
+            {
+                trash = pipe.nextLine();
+                System.out.println("You must enter a double: " + trash);
+            }
+        }while(!done);
+
+        return retVal;
+    }
+
+    /**
+     * Get an unconstrained double value
+     * @param pipe - Scanner instance to read the data System.in in most cases
+     * @param prompt - input prompt msg should not contain range info
+     * @return  - an unconstrained double value 
+     */
+    public static double getDouble(Scanner pipe, String prompt)
+    {
+        double retVal = 0;
+        String trash = "";
+        boolean done = false;
+
+        do
+        {
+            System.out.print("\n" + prompt + ": ");
+            if(pipe.hasNextDouble())
+            {
+                retVal = pipe.nextDouble();
+                pipe.nextLine();
+                done = true;
+            }
+            else
+            {
+                trash = pipe.nextLine();
+                System.out.println("You must enter a double: " + trash);
+            }
+        }while(!done);
+
+        return retVal;
+    }
+
+    /**
+     * Get a [Y/N] confirmation from the user
+     * @param pipe - Scanner instance to read the data System.in in most cases
+     * @param prompt -input prompt msg for user does not need [Y/N]
+     * @return - true for yes false for no
+     */
+    public static boolean getYNConfirm(Scanner pipe, String prompt)
+    {
+        boolean retVal = true;
+        String response = "";
+        boolean gotAVal = false;
+
+        do
+        {
+            System.out.print("\n" + prompt + " [Y/N] ");
+            response = pipe.nextLine();
+            if(response.equalsIgnoreCase("Y"))
+            {
+                gotAVal = true;
+                retVal = true;
+            }
+            else if(response.equalsIgnoreCase("N"))
+            {
+                gotAVal = true;
+                retVal = false;
+            }
+            else
+            {
+                System.out.println("You must answer [Y/N]! " + response );
+            }
+
+        }while(!gotAVal);
+
+        return retVal;
+    }
+    /**
+     * Get a string that matches a RegEx pattern! This is a very powerful method 
+     * @param pipe - Scanner instance to read the data System.in in most cases
+     * @param prompt - prompt for user
+     * @param regExPattern - java style RegEx pattern to constrain the input
+     * @return a String that matches the RegEx pattern supplied
+     */
+
+    public static String getRegExString(Scanner pipe, String prompt, String regExPattern)
+    {
+        String response = "";
+        boolean gotAVal = false;
+
+        do
+        {
+            System.out.print("\n" + prompt + ": ");
+            response = pipe.nextLine();
+            if(response.matches(regExPattern))
+            {
+                gotAVal = true;
+            }
+            else
+            {
+                System.out.println("\n" + response + " must match the pattern " + regExPattern);
+                System.out.println("Try again!");
+            }
+
+        }while(!gotAVal);
+
+        return response;
+    }
 }
