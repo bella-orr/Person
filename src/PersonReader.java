@@ -29,7 +29,7 @@ public class PersonReader
         if (start)
         {
 
-            try {
+            try{
                 File workingDirectory = new File(System.getProperty("user.dir"));
                 chooser.setCurrentDirectory(workingDirectory);
 
