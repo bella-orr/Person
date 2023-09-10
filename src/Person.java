@@ -14,7 +14,7 @@ public class Person
         this.title = title;
         this.YOB = YOB;
     }
-
+// getters and setters
     public String getID()
     {
         return ID;

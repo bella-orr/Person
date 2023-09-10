@@ -46,7 +46,7 @@ public class PersonReader
                     {
                         rec = reader.readLine();
 
-                        //separates files into fields
+                        //separates files into  fields
                         String [] details = rec.split(", ");
 
                         //assignments of fields

@@ -56,7 +56,7 @@ public class PersonGenerator
         }
         while(!done);
 
-        //Prints out objects
+
         for(Person p:people)
         {
             System.out.println(p);
