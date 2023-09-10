@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2ec1977-7ffd-4297-89ed-62fa12595132" name="Changes" comment="PersonReader update" />
+    <list default="true" id="f2ec1977-7ffd-4297-89ed-62fa12595132" name="Changes" comment="JTest added for Person">
+      <change afterPath="$PROJECT_DIR$/test/PersonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Person.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Person.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Person/PersonGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Person/PersonGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PersonGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PersonGenerator.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +44,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers&quot;: &quot;true&quot;,
     &quot;create.test.in.the.same.root&quot;: &quot;true&quot;
   }
 }</component>
@@ -48,6 +55,67 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.PersonTest.formalName">
+    <configuration name="PersonTest.formalName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Person" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PersonTest" />
+      <option name="METHOD_NAME" value="formalName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonTest.fullName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Person" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PersonTest" />
+      <option name="METHOD_NAME" value="fullName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonTest.getAge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Person" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PersonTest" />
+      <option name="METHOD_NAME" value="getAge" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Person" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PersonTest" />
+      <option name="METHOD_NAME" value="testToString" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonTest.toCSVDataRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Person" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PersonTest" />
+      <option name="METHOD_NAME" value="toCSVDataRecord" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PersonTest.testToString" />
+        <item itemvalue="JUnit.PersonTest.toCSVDataRecord" />
+        <item itemvalue="JUnit.PersonTest.getAge" />
+        <item itemvalue="JUnit.PersonTest.formalName" />
+        <item itemvalue="JUnit.PersonTest.fullName" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -72,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694307560359</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="PersonReader update">
+      <created>1694307721216</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694307721216</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

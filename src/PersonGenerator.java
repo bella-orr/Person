@@ -26,7 +26,7 @@ public class PersonGenerator
         String csvRec = " " ;
         Person folk;
         int YOB = 0 ;
-        int a = 0;
+
 
 
         do
