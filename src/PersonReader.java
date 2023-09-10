@@ -26,6 +26,7 @@ public class PersonReader
 
         start = SafeInput.getYNConfirm(con, "Would you like to select a file?");
 
+
         if (start)
         {
 

@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
 
-    //declarations for test
+    //declarations for PersonTest
     Person example;
 
     @BeforeEach

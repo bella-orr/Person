@@ -81,7 +81,7 @@ public class PersonGenerator
 
             writer.close();
 
-
+            //prints out data file written
             System.out.println();
             System.out.println("Data file written!");
         }
